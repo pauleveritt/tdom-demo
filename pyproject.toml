@@ -20,5 +20,4 @@ build-backend = "hatchling.build"
 dev = [
     "hatchling>=1.27.0",
     "pytest>=8.3.5",
-    "pytest-playwright>=0.7.0",
 ]
