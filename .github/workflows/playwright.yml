@@ -18,4 +18,4 @@ jobs:
       - name: Run tests
         run: |
           uv run playwright install
-          uv run pytest tests/test_fixtures.py tests/test_pages.py
+          uv run pytest
