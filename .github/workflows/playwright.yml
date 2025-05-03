@@ -13,8 +13,9 @@ jobs:
           version: "latest"
       - name: Setup environment for Python 3.13
         run: |
-          uv sync --pyproject pyproject-playwright.toml
+          cp pyproject-playwright.toml pyproject.toml
+          uv sync
       - name: Run tests
         run: |
-          uv run --pyproject pyproject-playwright.toml playwright install
-          uv run --pyproject pyproject-playwright.toml pytest -v -m "playwright"
+          uv run playwright install
+          uv run pytest -v -m "playwright"
