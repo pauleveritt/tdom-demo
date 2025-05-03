@@ -18,7 +18,5 @@ jobs:
           sudo apt-get install -y --no-install-recommends python3.14-dev python3.14-venv
           python3.14 -m pip install --upgrade pip setuptools
           python3.14 -m venv $HOME/venv-python3.14
-          echo "::set-env name=VIRTUAL_ENV::$HOME/venv-python3.14"
-          echo "::add-path::$HOME/venv-python3.14/bin"
-      - run: playwright install
-      - run: pytest tests
+      - run: $HOME/venv-python3.14/bin/playwright install
+      - run: $HOME/venv-python3.14/bin/pytest tests
