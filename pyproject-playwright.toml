@@ -22,3 +22,6 @@ dev = [
     "pytest>=8.3.5",
     "pytest-playwright>=0.7.0",
 ]
+testpaths = [
+    "tests/pwright",
+]

@@ -1,7 +1,4 @@
 """Ensure the test fixtures work as expected."""
-import pytest
-
-pytest.importorskip("playwright")
 from typing import cast
 
 from playwright.sync_api import Page
