@@ -4,7 +4,7 @@ on: [ push, pull_request ]
 jobs:
   playwright:
     runs-on: ubuntu-latest
-    name: Python ${{ matrix.python-version }}
+    name: Setup Playwright
     steps:
       - uses: actions/checkout@v4
       - name: Install the latest version of uv
@@ -16,5 +16,5 @@ jobs:
           uv sync --pyproject pyproject-playwright.toml
       - name: Run tests
         run: |
-          uv run playwright install
-          uv run pytest -v -m "playwright"
+          uv run --pyproject pyproject-playwright.toml playwright install
+          uv run --pyproject pyproject-playwright.toml pytest -v -m "playwright"

@@ -4,10 +4,7 @@ on: [ push, pull_request ]
 jobs:
   pytest:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [ '3.14' ]
-    name: Python ${{ matrix.python-version }}
+    name: Setup pytest
     steps:
       - uses: actions/checkout@v4
       - name: Install the latest version of uv
@@ -15,7 +12,6 @@ jobs:
         with:
           version: "latest"
       - name: Install Python 3.14
-        if: matrix.python-version == '3.14'
         run: |
           sudo add-apt-repository ppa:deadsnakes/nightly
           sudo apt-get update
