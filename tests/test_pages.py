@@ -1,4 +1,9 @@
+import pytest
+
+pytest.importorskip("playwright")
+
 from playwright.sync_api import Page
+
 
 def test_index(fake_page: Page):
     """Use Playwright to do a test on Hello World."""
