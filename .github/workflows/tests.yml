@@ -15,7 +15,7 @@ jobs:
         run: |
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends python3.14-dev python3.14-distutils python3.14-venv
+          sudo apt-get install -y --no-install-recommends python3.14-dev python3.14-venv
           python3.14 -m pip install --upgrade pip setuptools
           python3.14 -m venv $HOME/venv-python3.14
           echo "::set-env name=VIRTUAL_ENV::$HOME/venv-python3.14"
