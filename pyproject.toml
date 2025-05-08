@@ -20,7 +20,11 @@ build-backend = "hatchling.build"
 dev = [
     "hatchling>=1.27.0",
     "pytest>=8.3.5",
+    "black",
 ]
+
+[tool.uv.sources]
+black = { git = "https://github.com/davepeck/black", branch = "pep750-support" }
 
 [tool.pytest.ini_options]
 addopts = [
